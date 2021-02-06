@@ -1,0 +1,350 @@
+body{
+	background-color: aliceblue;
+}
+.main-menu,
+.main-menu *{
+	margin:0;
+	padding:0;
+	outline: none;
+	border:0;
+	background: none; 
+}
+.main-menu{
+	font-family: sans-serif;
+}
+.main-menu{
+	position: relative;
+	z-index:999;
+	background: rgba(255,255,255,0.9);
+	box-shadow:0 0 20px rgba(0,0,0,.3);
+	font-size: 0;
+	line-height: 0;
+	text-align: right;
+}
+.main-menu:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.main-menu li{
+	position: relative;
+	display:inline-block;
+	float:left;
+	padding: 5px;
+	border-style: solid;
+	border-color:rgba(0,0,0,.1);
+	border-right-width:1px;
+	font-size: 13px;
+	line-height: 45px;
+	text-align:left;
+	white-space: nowrap;
+}
+.main-menu li a{
+	display: block;
+	padding:0 20px;
+	text-decoration: none;
+	color:#666;
+	transition: background 0.4s, color 0.4s;
+}
+.main-menu li > div {
+	position: absolute;
+	z-index:1000;
+	top:100%;
+	left:-9999px;
+	margin-top:8px;
+	background: rgba(255,255,255,0.9);
+	box-shadow:0 0 8px rgba(0,0,0,.3);
+	opacity: 0;
+	transform-origin: 0% 0%;
+	transition: transform 0.4s, opacity 0.4s;
+}
+.main-menu li > div:after{
+	content: "";
+	position: absolute;
+	bottom:100%;
+	left:0;
+	width:100%;
+	height: 8px;
+	background: transparent;
+}
+.main-menu li > div:before{
+	content: "";
+	position: absolute;
+	bottom:100%;
+	left:24px;
+	border-right:5px solid transparent;
+	border-botttom:5px solid rgba(255,255,255,0.9);
+	border-left:5px solid transparent;
+}
+.main-menu li:hover > a{
+	background: #2da5da;
+	color:#fff;
+}
+.main-menu li:hover > div{
+	left:0;
+	opacity: 1;
+	transform: translate(0,0);
+}
+.main-menu .right{
+	float:none;
+	border-right-width:0;
+	border-left-width:1px;
+
+}
+.main-menu .right > div{
+	transform-origin-x: 100%; 
+}
+.main-menu .right:hover > div{
+	right: 0;
+	left:auto;
+}
+.main-menu .right:hover > div:before{
+	right: 24px;
+	left:auto;
+}
+.main-menu li li{
+	display: block;
+	float:none;
+	border-width:0;
+	border-top-width:1px;
+	line-height: 21px;
+	white-space: normal;
+}
+.main-menu li li:first-child{
+	border-top:0;
+}
+.main-menu li li a{
+	padding-top:12px;
+	padding-bottom:12px;
+}
+.main-menu li li > div {
+	top:0;
+	margin:0 0 0 8px;
+}
+.main-menu li li > div:after{
+	top: 0;
+	right:100%;
+	bottom:auto;
+	left:auto;
+	width:8px;
+	height: 100%;
+}
+.main-menu li li > div:before{
+	top:22px;
+	right:100%;
+	bottom:auto;
+	left:auto;
+	border-top:5px solid transparent;
+	border-right:5px solid rgba(255,255,255,0.9);
+	border-bottom:5px solid transparent;
+}
+.main-menu li li:hover > div{
+	left:100%;
+}
+.main-menu .right li > div {
+	margin:0 8px 0 0;
+	-webkit-transform-origin-x:100%;
+}
+.main-menu .right li > div:after{
+	right:auto;
+	left:100%;
+}
+.main-menu .right li > div:before{
+	right:auto;
+	left:100%;
+	border-right:none;
+	border-left:5px solid rgba(255,255,255,0.9);
+}
+.main-menu .right li:hover > div {
+	right:100%;
+	left:auto;
+}
+.m-menu-scale li > div {
+	transform: scale(0,0);
+}
+.m-menu-scale li:hover > div {
+	transform: scale(1,1);
+}
+.main-menu .g-container-1{
+	width:233px;
+}
+.main-menu .g-container-2{
+	width:311px;
+}
+.main-menu .g-container-3{
+	width:389px;
+}
+.main-menu li a > .fa {
+	display: block;
+	float:left;
+	width:16px;
+	margin:0 10px 0 -4px;
+	font-size:16px;
+	line-height: inherit;
+	text-align: center;
+}
+.main-menu li a > .fa-single {
+	float:none;
+	margin:0;
+}
+.main-menu form fieldset {
+	display: block;
+	padding:25px 30px;
+}
+.main-menu form fieldset + fieldset {
+	border-top:1px solid rgba(0,0,0,.1);
+}
+.main-menu form section {
+	margin-bottom:20px;
+}
+.main-menu form .input{
+	position: relative;
+	display: block;
+}
+.main-menu form .input input{
+	display: block;
+	box-sizing: border-box;
+	width:100%;
+	height: 39px;
+	padding:8px 10px;
+	outline: none;
+	border:2px solid #e5e5e5;
+	border-radius:0;
+	background: #fff;
+	font:13px/19px sans-serif;
+	color:#404040;
+	appearance:normal;
+	transition:border-color 0.3s;
+}
+.main-menu form .button {
+	float:right;
+	height: 39px;
+	overflow: hidden;
+	margin-left:20px;
+	padding:0 20px;
+	outline: none;
+	background-color: #2da5da;
+	font:300 13px/39px sans-serif;
+	text-decoration: none;
+	color:#fff;
+	cursor:pointer;
+	opacity: 0.8;
+	transition: opacity 0.2s;
+}
+.main-menu form .fa-append{
+	position: absolute;
+	top: 5px;
+	right:5px;
+	width:29px;
+	height: 29px;
+	padding-left:3px;
+	border-left:1px solid #e5e5e5;
+	font-size: 15px;
+	line-height: 29px;
+	text-align: center;
+	color: #ccc;
+}
+.main-menu form .fa-append + input {
+	padding-right: 46px;
+}
+.main-menu form .row{
+	margin:0 -15px;
+}
+.main-menu form .row:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.main-menu form .col{
+	float:left;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left:15px;
+	box-sizing: border-box;
+}
+.main-menu form .col-6{
+	width:50%;
+}
+.main-menu form .button:hover{
+	opacity: 1;
+}
+.main-menu form .input input:focus{
+	border-color:#2da5da;
+}
+
+@media screen and (max-width: 1000px){
+	.main-menu li a{
+		padding:0 15px;
+	}
+	.main-menu .g-container-1{
+		width:176px;
+	}
+	.main-menu .g-container-2{
+		width:235px;
+	}
+	.main-menu .g-container-3{
+		width:294px;
+	}
+}
+@media screen and (max-width: 767px){
+	body{
+		-webkit-text-size-adjust:none;
+	}
+	.main-menu form fieldset{
+		display:block;
+		padding:15px 20px;
+	}
+	.main-menu form section {
+		margin-bottom:10px;
+	}
+	.main-menu form .row{
+		margin:0 -10px;
+	}
+	.main-menu form .col{
+		padding-right:10px;
+		padding-left:10px;
+	}
+	.m-menu-icons li{
+		position: static;
+		font-size: 0;
+	}
+	.m-menu-icons li a{
+		padding:0 10px;
+	}
+	.m-menu-icons li > div {
+		width:100%;
+	}
+	.m-menu-icons li > div:before{
+		display:none;
+	}
+	.m-menu-icons li a > .fa{
+		margin:0;
+	}
+	.m-menu-icons li li {
+		position: relative;
+		font-size: 13px;
+	}
+	.m-menu-icons li li > div,
+	.m-menu-icons .right li > div {
+		top:100%;
+		margin:8px 0 0 0;
+	}
+	.m-menu-icons li li > div:after,
+	.m-menu-icons .right li > div:after{
+		top:auto;
+		right: auto;
+		bottom:100%;
+		left:0;
+		width:100%;
+		height: 8px;
+	}
+	.m-menu-icons li li:hover > div,
+	.m-menu-icons .right li:hover > div{
+		right:0;
+		left:41px;
+		width:auto;
+	}
+	.m-menu-icons li li a > .fa{
+		margin-right:10px;
+	}
+}
